@@ -1,6 +1,7 @@
 node ('master') {
                     checkout scm
                     stage('Build') {
+                      echo 'Hi, im in branch '
                       withMaven(maven: 'M3') {
                        if (isUnix()) {
                           sh 'mvn -Dmaven.test.failure.ignore clean package'
